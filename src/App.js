@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import Counter from './components/Counter'
+import StyledRow from "./styled/StyledRow"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Counter />
+        <StyledRow>
+          Old (current) way: <Counter />
+        </StyledRow>
+        <StyledRow>
+          Hooked way: <Counter />
+        </StyledRow>
       </div>
     );
   }
