@@ -1,3 +1,7 @@
-import Counter from './CounterHooked'
+import CounterHooked from './CounterHooked'
+import Counter from './Counter'
 
-export default Counter;
+export {
+  Counter,
+  CounterHooked
+};

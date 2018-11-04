@@ -18,7 +18,7 @@ export default class Counter extends React.Component {
 
   render() {
     return (<div>
-        <p>You clicked {count} times</p>
+        <p>You clicked {this.state.count} times</p>
         <button onClick={() => this.setCount(this.state.count + 1)}>
           Increment
         </button>

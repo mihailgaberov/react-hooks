@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/Counter'
+import { Counter } from './components/Counter'
+import { CounterHooked } from './components/Counter'
 import StyledRow from "./styled/StyledRow"
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
           Old (current) way: <Counter />
         </StyledRow>
         <StyledRow>
-          Hooked way: <Counter />
+          Hooked way: <CounterHooked />
         </StyledRow>
       </div>
     );
