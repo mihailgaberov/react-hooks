@@ -3,16 +3,24 @@ import './App.css';
 import { Counter } from './components/Counter'
 import { CounterHooked } from './components/Counter'
 import StyledRow from "./styled/StyledRow"
+import DataFetcher from "./components/DataFetcher/DataFetcher";
+import DataFetcherHooked from "./components/DataFetcher/DataFetcherHooked";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <StyledRow>
-          Old (current) way: <Counter />
+          Counter - Old (current) way: <Counter/>
         </StyledRow>
         <StyledRow>
-          Hooked way: <CounterHooked />
+          Counter - Hooked way: <CounterHooked/>
+        </StyledRow>
+        <StyledRow>
+          DataFetcher - Old (current) way: <DataFetcher/>
+        </StyledRow>
+        <StyledRow>
+          DataFetcherHooked - Old (current) way: <DataFetcherHooked/>
         </StyledRow>
       </div>
     );
