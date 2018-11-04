@@ -1,2 +1,2 @@
 ## Description 
-This repo contains examples explained in  "Hooking with React hooks" article.
+This repo contains the examples that "Hooking with React hooks" article is talking about
