@@ -20,10 +20,6 @@ export default class DataFetcher extends React.Component {
     });
   }
 
-  componentDidUpdate() {
-
-  }
-
   render() {
     const { data } = this.state;
     return (<div>

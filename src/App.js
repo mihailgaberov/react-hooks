@@ -20,7 +20,7 @@ class App extends Component {
           DataFetcher - Old (current) way: <DataFetcher/>
         </StyledRow>
         <StyledRow>
-          DataFetcherHooked - Old (current) way: <DataFetcherHooked/>
+          DataFetcherHooked - Hooked way: <DataFetcherHooked/>
         </StyledRow>
       </div>
     );
