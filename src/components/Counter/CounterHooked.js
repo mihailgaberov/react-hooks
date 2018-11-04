@@ -9,13 +9,13 @@ export default function Counter() {
       <p>You clicked {count} times. Current number is {text}</p>
       <button onClick={() => {
         setCount(count + 1);
-        setText((count + 1 ) > 0 ? 'positive': '');
+        setText((count + 1 ) > 0 ? 'positive': 'zero');
       }}>
         Increment
       </button>
       <button onClick={() => {
         setCount(count - 1);
-        setText((count - 1) < 0 ? 'negative': '');
+        setText((count - 1) < 0 ? 'negative': 'zero');
       }}>
         Decrement
       </button>
