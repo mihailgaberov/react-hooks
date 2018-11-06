@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 export default function Counter() {
   const [count, setCount] = useState(0);
-  let [text, setText] = useState('zero');
+  const [text, setText] = useState('zero');
 
   return (
     <div>

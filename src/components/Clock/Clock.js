@@ -66,7 +66,6 @@ export default class Clock extends React.Component {
           </button>
         </div>
       </div>
-
     );
   };
 }
