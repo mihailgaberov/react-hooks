@@ -1,2 +1,32 @@
 ## Description 
-This repo contains the examples that "Hooking with React hooks" article is talking about
+This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks"](link).
+
+## Presentation
+[You can see the presentation here.](link)
+
+## Running The App
+
+To run the app, follow these steps.
+
+1. Ensure that [NodeJS](http://nodejs.org/) is installed. This provides the platform on which the build tooling runs.
+2. From the project folder, execute the following command:
+
+  ```shell
+  npm install
+  ```
+  
+5. To run the app with the examples:
+
+  ```shell
+  npm run start
+  ```
+
+6. Browse to [http://localhost:3000](http://localhost:3000) to see the app.
+
+7. To run the presentation locally:
+
+  ```shell
+  npm run start:presentation
+  ```
+
+8. Browse to [http://127.0.0.1:8080](http://127.0.0.1:8080) to see the presentation slides.
