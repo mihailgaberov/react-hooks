@@ -1,8 +1,10 @@
 ## Description 
-This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks"](link).
+This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks" TODO: add real link](link).
+
+TODO: Add screenshot.
 
 ## Presentation
-[You can see the presentation here.](link)
+[You can see the presentation here. TODO: add real link](link)
 
 ## Running The App
 
