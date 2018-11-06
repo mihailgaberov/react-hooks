@@ -1,13 +1,12 @@
 import React from 'react';
 
-let interval = null;
-
 export default class Clock extends React.Component {
 
   constructor(props) {
     super(props);
 
     this.state = {
+      interval: null,
       hours: 0,
       minutes: 0,
       seconds: 0,
@@ -19,21 +18,25 @@ export default class Clock extends React.Component {
   }
 
   start = () => {
-    if (interval !== null) return;
+    if (this.state.interval !== null) return;
 
-    interval = setInterval(() => {
-      const date = new Date();
-      this.setState({
-        hours: date.getHours(),
-        minutes: date.getMinutes(),
-        seconds: date.getSeconds(),
-      })
-    }, 1000);
+    this.setState({
+      interval: setInterval(() => {
+        const date = new Date();
+        this.setState({
+          hours: date.getHours(),
+          minutes: date.getMinutes(),
+          seconds: date.getSeconds(),
+        })
+      }, 1000)
+    });
   };
 
   stop = () => {
-    clearInterval(interval);
-    interval = null;
+    clearInterval(this.state.interval);
+    this.setState({
+      interval: null,
+    });
   };
 
   reset = () => {
@@ -46,16 +49,16 @@ export default class Clock extends React.Component {
   };
 
   render() {
-    const { hours, minutes, seconds} = this.state;
+    const { hours, minutes, seconds, interval} = this.state;
 
     return (
       <div>
-        The time is: {hours} : {minutes} : {seconds < 10 ? '0' + seconds : seconds}
+        The time is: {hours < 10 ? '0' + hours: hours} : {minutes < 10 ? '0' + minutes : minutes} : {seconds < 10 ? '0' + seconds : seconds}
         <div className="buttons">
-          <button onClick={() => this.start()}>
+          <button onClick={() => this.start()} disabled={interval !== null}>
             Start
           </button>
-          <button onClick={() => this.stop()}>
+          <button onClick={() => this.stop()} disabled={interval === null}>
             Stop
           </button>
           <button onClick={() => this.reset()}>
