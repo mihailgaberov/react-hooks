@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function TimerHooked() {
+export default function ClockHooked() {
 
   useEffect(() => {
 

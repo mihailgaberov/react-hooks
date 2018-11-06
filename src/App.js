@@ -5,6 +5,8 @@ import { CounterHooked } from './components/Counter'
 import StyledRow from "./styled/StyledRow"
 import DataFetcher from "./components/DataFetcher/DataFetcher";
 import DataFetcherHooked from "./components/DataFetcher/DataFetcherHooked";
+import Clock from "./components/Clock/Clock";
+import ClockHooked from "./components/Clock/ClockHooked";
 
 class App extends Component {
   render() {
@@ -21,6 +23,12 @@ class App extends Component {
         </StyledRow>
         <StyledRow>
           DataFetcherHooked - Hooked way: <DataFetcherHooked/>
+        </StyledRow>
+        <StyledRow>
+          Clock - Old (current) way: <Clock/>
+        </StyledRow>
+        <StyledRow>
+          ClockHooked - Hooked way: <ClockHooked/>
         </StyledRow>
       </div>
     );
