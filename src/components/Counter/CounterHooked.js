@@ -25,7 +25,7 @@ export default function Counter() {
         setText((count + 1 ) > 0 ? 'positive': 'zero');
         if (count >= 5) {
           setColor('springgreen');
-        } else {
+        } else if ((count + 1) === 0) {
           setColor('beige');
         }
       }}>
@@ -36,7 +36,7 @@ export default function Counter() {
         setText((count - 1) < 0 ? 'negative': 'zero');
         if (count <= -5) {
           setColor('lightsalmon');
-        } else {
+        } else if ((count-1) === 0) {
           setColor('beige');
         }
       }}>
