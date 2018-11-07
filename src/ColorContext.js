@@ -11,6 +11,8 @@ const reducer = (state, action) => {
       return initialState;
     case "SET-COLOR":
       return { ...state, currentColor: action.payload };
+    default:
+      return initialState;
   }
 };
 
