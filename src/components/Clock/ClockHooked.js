@@ -1,28 +1,33 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 
-const initialState = { hours: 0, minutes: 0, seconds: 0, tickInterval: undefined };
+const initialState = { hours: 0, minutes: 0, seconds: 0, isRunning: true };
+let tickInterval = undefined;
 
 function reducer(state, action) {
   switch (action.type) {
     case 'START':
+    return {
+      ...state,
+      isRunning: true,
+    }
+    case 'TICK':
       return {
         ...state,
-        tickInterval: setInterval(() => {
-          state.hours = new Date().getHours();
-          state.minutes = new Date().getMinutes();
-          state.seconds = new Date().getSeconds();
-          console.log('>>> time: ', state.hours + ':' + state.minutes + ':' + state.seconds);
-        }, 1000),
+        hours: action.payload.hours,
+        minutes: action.payload.minutes,
+        seconds: action.payload.seconds,
       };
-    case 'STOP':
+    case 'STOP': 
+      clearInterval(tickInterval);
       return {
         ...state,
-        tickInterval: clearInterval(state.tickInterval)
-      };
+        isRunning: false,
+      }
     case 'RESET':
+      clearInterval(tickInterval);
       return {
-        state: action.payload,
-        tickInterval: clearInterval(state.tickInterval)
+        ...initialState,
+        isRunning: false
       };
     default:
       return initialState;
@@ -30,19 +35,34 @@ function reducer(state, action) {
 }
 
 export default function ClockHooked() {
-  const [ state, dispatch ] = useReducer(reducer, initialState, {type: 'RESET', payload: initialState});
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state.tickInterval);
+  useEffect(() => {
+    if (state.isRunning) {
+      tickInterval = setInterval(() => {
+        dispatch({
+          type: 'TICK', payload: {
+            hours: new Date().getHours(),
+            minutes: new Date().getMinutes(),
+            seconds: new Date().getSeconds(),
+          }
+        });
+      }, 1000);
+      return () => {
+        clearInterval(tickInterval);
+      };
+    }
+  });
 
   return (
     <div>
       The time
       is: {state.hours < 10 ? '0' + state.hours : state.hours} : {state.minutes < 10 ? '0' + state.minutes : state.minutes} : {state.seconds < 10 ? '0' + state.seconds : state.seconds}
       <div className="buttons">
-        <button onClick={() => dispatch({ type: 'START' })} disabled={state.tickInterval !== undefined}>
+        <button onClick={() => dispatch({type: 'START'})} disabled={state.isRunning}>
           Start
         </button>
-        <button onClick={() => dispatch({ type: 'STOP' })} disabled={state.tickInterval === undefined}>
+        <button onClick={() => dispatch({type: 'STOP'})} disabled={!state.isRunning}>
           Stop
         </button>
         <button onClick={() => dispatch({ type: 'RESET' })}>
