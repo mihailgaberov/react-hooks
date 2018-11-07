@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { ColorContext } from '../../ColorContext';
+import StyledButton from "../../styled/StyledButton";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
@@ -31,7 +32,7 @@ export default function Counter() {
       }}>
         Increment
       </button>
-      <button onClick={() => {
+      <StyledButton onClick={() => {
         setCount(count - 1);
         setText((count - 1) < 0 ? 'negative': 'zero');
         if (count <= -5) {
@@ -41,7 +42,7 @@ export default function Counter() {
         }
       }}>
         Decrement
-      </button>
+      </StyledButton>
     </div>
   );
 }
