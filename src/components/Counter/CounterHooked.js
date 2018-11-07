@@ -6,8 +6,6 @@ export default function Counter() {
   const [text, setText] = useState('zero');
   const { state, dispatch } = useContext(ColorContext);
 
-  console.log('>>> state: ', state)
-
   useEffect(
     () => {
       document.body.style.backgroundColor = state.currentColor;
@@ -15,18 +13,32 @@ export default function Counter() {
     [state.currentColor]
   );
 
+  const setColor = color => {
+    dispatch({ type: "SET-COLOR", payload: color })
+  };
+
   return (
     <div>
       <p>You clicked {count} times. Current number is {text}</p>
       <button onClick={() => {
         setCount(count + 1);
         setText((count + 1 ) > 0 ? 'positive': 'zero');
+        if (count >= 5) {
+          setColor('springgreen');
+        } else {
+          setColor('beige');
+        }
       }}>
         Increment
       </button>
       <button onClick={() => {
         setCount(count - 1);
         setText((count - 1) < 0 ? 'negative': 'zero');
+        if (count <= -5) {
+          setColor('lightsalmon');
+        } else {
+          setColor('beige');
+        }
       }}>
         Decrement
       </button>
