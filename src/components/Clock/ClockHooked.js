@@ -9,7 +9,7 @@ function reducer(state, action) {
     return {
       ...state,
       isRunning: true,
-    }
+    };
     case 'TICK':
       return {
         ...state,
@@ -22,7 +22,7 @@ function reducer(state, action) {
       return {
         ...state,
         isRunning: false,
-      }
+      };
     case 'RESET':
       clearInterval(tickInterval);
       return {
