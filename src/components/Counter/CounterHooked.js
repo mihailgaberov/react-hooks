@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { ColorContext } from '../../ColorContext';
 
 export default function Counter() {
   const [count, setCount] = useState(0);
   const [text, setText] = useState('zero');
+  const { state, dispatch } = useContext(ColorContext);
+
+  console.log('>>> state: ', state)
+
+  useEffect(
+    () => {
+      document.body.style.backgroundColor = state.currentColor;
+    },
+    [state.currentColor]
+  );
 
   return (
     <div>
