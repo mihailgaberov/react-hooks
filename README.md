@@ -2,7 +2,7 @@
 This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks" TODO: add real link](link).
 
 ##Screenshot
-
+![Screenshot](https://github.com/mihailgaberov/react-hooks/blob/master/screenshot.jpg)
 
 ## Presentation
 [You can see the presentation here.](https://mihailgaberov.github.io/react-hooks/)
