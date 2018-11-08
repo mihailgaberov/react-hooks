@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Counter } from './components/Counter'
-import { CounterHooked } from './components/Counter'
-import StyledRow from "./styled/StyledRow"
-import StyledContainer from "./styled/StyledContainer"
+import { Counter } from './components/Counter';
+import { CounterHooked } from './components/Counter';
+import StyledRow from "./styled/StyledRow";
+import StyledContainer from "./styled/StyledContainer";
+import StyledTitle from "./styled/StyledTitle";
 import DataFetcher from "./components/DataFetcher/DataFetcher";
 import DataFetcherHooked from "./components/DataFetcher/DataFetcherHooked";
 import Clock from "./components/Clock/Clock";
@@ -14,27 +15,31 @@ class App extends Component {
     return (
       <div className="App">
         <StyledContainer>
+          <StyledTitle>Class Components</StyledTitle>
+          <StyledTitle>Hooked Components</StyledTitle>
+        </StyledContainer>
+        <StyledContainer>
           <StyledRow>
-            Counter - Old (current) way: <Counter />
+            Counter <Counter />
           </StyledRow>
           <StyledRow>
-            Counter - Hooked way: <CounterHooked />
+            CounterHooked <CounterHooked />
           </StyledRow>
         </StyledContainer>
         <StyledContainer>
           <StyledRow>
-            DataFetcher - Old (current) way: <DataFetcher />
+            DataFetcher <DataFetcher />
           </StyledRow>
           <StyledRow>
-            DataFetcherHooked - Hooked way: <DataFetcherHooked />
+            DataFetcherHooked <DataFetcherHooked />
           </StyledRow>
         </StyledContainer>
         <StyledContainer>
           <StyledRow>
-            Clock - Old (current) way: <Clock />
+            Clock <Clock />
           </StyledRow>
           <StyledRow>
-            ClockHooked - Hooked way: <ClockHooked />
+            ClockHooked <ClockHooked />
           </StyledRow>
         </StyledContainer>
       </div>
