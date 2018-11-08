@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MockedApi from "../../api/mocks";
+import useFriendName from '../../useFriendName';
 
 export default function DataFetcherHooked() {
   const [ names, setNames ] = useState([]);
+  const isNickHere = useFriendName('Nikolaos');
 
   useEffect(() => {
     const data = MockedApi.fetchData();
@@ -10,6 +12,9 @@ export default function DataFetcherHooked() {
       setNames(res);
     });
   });
+
+
+  console.log('>>> is nick here: ', isNickHere);
 
   return (
     <div>
