@@ -21,7 +21,7 @@ export default function Counter() {
   return (
     <div>
       <p>You clicked {count} times. Current number is {text}</p>
-      <button onClick={() => {
+      <StyledButton onClick={() => {
         setCount(count + 1);
         setText((count + 1 ) > 0 ? 'positive': 'zero');
         if (count >= 5) {
@@ -31,7 +31,7 @@ export default function Counter() {
         }
       }}>
         Increment
-      </button>
+      </StyledButton>
       <StyledButton onClick={() => {
         setCount(count - 1);
         setText((count - 1) < 0 ? 'negative': 'zero');
