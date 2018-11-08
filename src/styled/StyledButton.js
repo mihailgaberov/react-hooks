@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const StyledButton = styled.button`
   display: inline-block;
@@ -15,6 +15,12 @@ const StyledButton = styled.button`
   :hover {
     background: white;
     color: rgb(219, 112, 147);
+  }
+
+  :disabled {
+    opacity: .5;
+    pointer: default;
+    pointer-events: none;
   }
 `;
 
