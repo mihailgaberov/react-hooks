@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import MockedApi from "./api/mocks";
 
 export default function useFriendName(friendName) {
-  const [isPresent, setIsPresent] = useState(null);
+  const [isPresent, setIsPresent] = useState(false);
 
 
   useEffect(() => {

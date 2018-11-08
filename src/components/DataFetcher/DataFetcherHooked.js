@@ -13,11 +13,9 @@ export default function DataFetcherHooked() {
     });
   });
 
-
-  console.log('>>> is nick here: ', isNickHere);
-
   return (
     <div>
+      {isNickHere && 'Nick is here!'}
       <ul>{names.map((element, idx) => (<li key={idx}>{element.name + ' ' + element.surname}</li>))}</ul>
     </div>
   );
