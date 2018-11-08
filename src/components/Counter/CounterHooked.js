@@ -19,13 +19,13 @@ export default function Counter() {
   };
 
   return (
-    <div>
+    <div id="counter-hooked">
       <p>You clicked {count} times. Current number is {text}</p>
       <StyledButton onClick={() => {
         setCount(count + 1);
         setText((count + 1 ) > 0 ? 'positive': 'zero');
         if (count >= 5) {
-          setColor('springgreen');
+          setColor('azure');
         } else if ((count + 1) === 0) {
           setColor('beige');
         }
