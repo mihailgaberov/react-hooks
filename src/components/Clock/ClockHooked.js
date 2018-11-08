@@ -1,4 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
+import StyledButton from "../../styled/StyledButton";
 
 const initialState = { hours: 0, minutes: 0, seconds: 0, isRunning: true };
 let tickInterval = undefined;
@@ -59,15 +60,15 @@ export default function ClockHooked() {
       The time
       is: {state.hours < 10 ? '0' + state.hours : state.hours} : {state.minutes < 10 ? '0' + state.minutes : state.minutes} : {state.seconds < 10 ? '0' + state.seconds : state.seconds}
       <div className="buttons">
-        <button onClick={() => dispatch({type: 'START'})} disabled={state.isRunning}>
+        <StyledButton onClick={() => dispatch({type: 'START'})} disabled={state.isRunning}>
           Start
-        </button>
-        <button onClick={() => dispatch({type: 'STOP'})} disabled={!state.isRunning}>
+        </StyledButton>
+        <StyledButton onClick={() => dispatch({type: 'STOP'})} disabled={!state.isRunning}>
           Stop
-        </button>
-        <button onClick={() => dispatch({ type: 'RESET' })}>
+        </StyledButton>
+        <StyledButton onClick={() => dispatch({ type: 'RESET' })}>
           Reset
-        </button>
+        </StyledButton>
       </div>
     </div>
   );

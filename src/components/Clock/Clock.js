@@ -1,4 +1,5 @@
 import React from 'react';
+import StyledButton from "../../styled/StyledButton";
 
 export default class Clock extends React.Component {
 
@@ -55,15 +56,15 @@ export default class Clock extends React.Component {
       <div>
         The time is: {hours < 10 ? '0' + hours: hours} : {minutes < 10 ? '0' + minutes : minutes} : {seconds < 10 ? '0' + seconds : seconds}
         <div className="buttons">
-          <button onClick={() => this.start()} disabled={interval !== null}>
+          <StyledButton onClick={() => this.start()} disabled={interval !== null}>
             Start
-          </button>
-          <button onClick={() => this.stop()} disabled={interval === null}>
+          </StyledButton>
+          <StyledButton onClick={() => this.stop()} disabled={interval === null}>
             Stop
-          </button>
-          <button onClick={() => this.reset()}>
+          </StyledButton>
+          <StyledButton onClick={() => this.reset()}>
             Reset
-          </button>
+          </StyledButton>
         </div>
       </div>
     );
