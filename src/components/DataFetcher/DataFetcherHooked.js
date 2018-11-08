@@ -19,7 +19,7 @@ export default function DataFetcherHooked() {
 
   return (
     <div>
-      {isNickHere && 'Nick is here!'}
+      {isNickHere && <p className="special">Nick is here!</p>}
       <ul>{names.map((element, idx) => (<li key={idx}>{element.name + ' ' + element.surname}</li>))}</ul>
     </div>
   );
