@@ -11,7 +11,11 @@ export default function DataFetcherHooked() {
     data.then((res) => {
       setNames(res);
     });
-  });
+    return () => {
+      console.log('Cleaning.')
+    }
+  }, []); // You can pass the special value of empty array [] as a way of saying “only run on mount and unmount”.
+
 
   return (
     <div>
