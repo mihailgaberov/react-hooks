@@ -5,7 +5,7 @@ This repo contains working examples and presentation slides discussed in the art
 ![Screenshot](https://github.com/mihailgaberov/react-hooks/blob/master/screenshot.jpg)
 
 ## Presentation
-[You can see the presentation here.](https://mihailgaberov.github.io/react-hooks/)
+[Presentation slides here.](https://mihailgaberov.github.io/react-hooks/)
 
 ## Running The App
 
