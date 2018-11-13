@@ -1,10 +1,11 @@
 ## Description 
-This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks" TODO: add real link](link).
+This repo contains working examples and presentation slides discussed in the article ["Hooking with React hooks"](https://medium.com/@mihailgaberov/hooking-with-react-hooks-964df4b23960).
 
-TODO: Add screenshot.
+## Screenshot
+![Screenshot](https://github.com/mihailgaberov/react-hooks/blob/master/screenshot.jpg)
 
 ## Presentation
-[You can see the presentation here. TODO: add real link](link)
+[Presentation slides here.](https://mihailgaberov.github.io/react-hooks/)
 
 ## Running The App
 
