@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:presentation": "mdx-deck deck.mdx"
+    "start:presentation": "mdx-deck deck.mdx",
+    "build:presentation": "mdx-deck build deck.mdx"
   },
   "keywords": [
     "react",
