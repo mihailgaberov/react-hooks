@@ -1,3 +1,10 @@
-.App {
-  text-align: left;
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+img {
+  width: 250px;
 }

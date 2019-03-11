@@ -1,0 +1,62 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "serverless-20190311101134-authRole",
+			"UnauthRoleArn": "arn:aws:iam::379633525774:role/serverless-20190311101134-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::379633525774:role/serverless-20190311101134-authRole",
+			"Region": "eu-central-1",
+			"DeploymentBucketName": "serverless-20190311101134-deployment",
+			"UnauthRoleName": "serverless-20190311101134-unauthRole",
+			"StackName": "serverless-20190311101134",
+			"StackId": "arn:aws:cloudformation:eu-central-1:379633525774:stack/serverless-20190311101134/ab058590-43dd-11e9-bf7e-066084ff6f3a"
+		}
+	},
+	"function": {
+		"shibafunction": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [],
+			"lastBuildTimeStamp": "2019-03-11T10:02:46.511Z",
+			"lastPackageTimeStamp": "2019-03-11T11:18:40.093Z",
+			"distZipFilename": "shibafunction-1552303118-latest-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/serverless-20190311101134-deployment/amplify-cfn-templates/function/shibafunction-cloudformation-template.json",
+				"logicalId": "functionshibafunction"
+			},
+			"lastPushTimeStamp": "2019-03-11T11:19:41.960Z",
+			"output": {
+				"Region": "eu-central-1",
+				"Arn": "arn:aws:lambda:eu-central-1:379633525774:function:shibafunction-serverless",
+				"Name": "shibafunction-serverless"
+			},
+			"lastPushDirHash": "FMVr5YOqihLUPADgOuETGvmg5lk="
+		}
+	},
+	"api": {
+		"shibaapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "shibafunction",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/serverless-20190311101134-deployment/amplify-cfn-templates/api/shibaapi-cloudformation-template.json",
+				"logicalId": "apishibaapi"
+			},
+			"lastPushTimeStamp": "2019-03-11T11:19:41.952Z",
+			"output": {
+				"ApiName": "shibaapi",
+				"RootUrl": "https://1ybh6nh6ab.execute-api.eu-central-1.amazonaws.com/serverless"
+			},
+			"lastPushDirHash": "1J21M+VuLrYCHLQPo6Rz+9nXTxc="
+		}
+	}
+}

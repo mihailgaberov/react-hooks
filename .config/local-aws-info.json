@@ -1,0 +1,7 @@
+{
+    "serverless": {
+        "configLevel": "project",
+        "useProfile": true,
+        "profileName": "amplify-cli-user"
+    }
+}

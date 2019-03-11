@@ -1,50 +1,47 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Counter } from './components/Counter';
-import { CounterHooked } from './components/Counter';
-import StyledRow from "./styled/StyledRow";
-import StyledContainer from "./styled/StyledContainer";
-import StyledTitle from "./styled/StyledTitle";
-import DataFetcher from "./components/DataFetcher/DataFetcher";
-import DataFetcherHooked from "./components/DataFetcher/DataFetcherHooked";
-import Clock from "./components/Clock/Clock";
-import ClockHooked from "./components/Clock/ClockHooked";
+import Amplify, { API } from 'aws-amplify';
+import awsmobile from './aws-exports';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <StyledContainer>
-          <StyledTitle>Class Components</StyledTitle>
-          <StyledTitle>Hooked Components</StyledTitle>
-        </StyledContainer>
-        <StyledContainer>
-          <StyledRow>
-            Counter <Counter />
-          </StyledRow>
-          <StyledRow>
-            CounterHooked <CounterHooked />
-          </StyledRow>
-        </StyledContainer>
-        <StyledContainer>
-          <StyledRow>
-            DataFetcher <DataFetcher />
-          </StyledRow>
-          <StyledRow>
-            DataFetcherHooked <DataFetcherHooked />
-          </StyledRow>
-        </StyledContainer>
-        <StyledContainer>
-          <StyledRow>
-            Clock <Clock />
-          </StyledRow>
-          <StyledRow>
-            ClockHooked <ClockHooked />
-          </StyledRow>
-        </StyledContainer>
-      </div>
-    );
+Amplify.configure(awsmobile);
+
+const App = () => {
+  const [pictures, setPictures] = useState([]);
+  const [color, setColor] = useState('#DDD');
+
+  useEffect(() => {
+    fetchPictures(10);
+  }, []);
+
+  async function fetchPictures(count) {
+    const response = await API.post('shibaapi', '/pictures', { body: { number: count } });
+    setPictures(response.data);
   }
-}
+
+  const renderPics = (pictures) => (pictures && pictures.map((el, idx) => (
+    <div key={idx}><img src={el} alt='Shibe' title='Shibe' /></div>)));
+
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = color;
+  });
+
+  return <>
+    <h2>useEffect</h2>
+    <button onClick={() => setColor(getRandomColor())}>Change Background</button>
+    <button onClick={() => fetchPictures(10)}>Fetch More</button>
+    <div className='images-container'>
+      {renderPics(pictures)}
+    </div>
+  </>
+};
 
 export default App;

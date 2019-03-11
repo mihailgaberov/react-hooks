@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/pictures",
+            "lambdaFunction": "shibafunction",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "shibaapi",
+    "apiName": "shibaapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "shibafunction"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "serverless-20190311101134-authRole",
+        "unAuthRoleName": "serverless-20190311101134-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "shibafunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
