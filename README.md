@@ -1,5 +1,5 @@
 ## Description 
-This repo contains working examples and presentation slides discussed in the article ["React hooks: a new way of working with React state"](https://medium.com/@mihailgaberov/hooking-with-react-hooks-964df4b23960).
+This repo contains working examples and presentation slides discussed in ["React hooks: a new way of working with React state"](https://medium.com/@mihailgaberov/hooking-with-react-hooks-964df4b23960).
 
 ## Screenshot
 ![Screenshot](https://github.com/mihailgaberov/react-hooks/blob/master/screenshot.jpg)
