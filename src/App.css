@@ -1,3 +1,7 @@
+h2 {
+  margin: 14px;
+}
+
 .images-container {
   display: flex;
   justify-content: space-between;
@@ -7,4 +11,20 @@
 
 img {
   width: 250px;
+}
+
+button {
+  padding: 14px;
+  margin: 14px;
+  border: 2px solid crimson;
+  border-radius: 15px;
+  background: pink;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: .7;
+  color: white;
+  cursor: pointer;
 }
