@@ -5,12 +5,22 @@ import awsmobile from './aws-exports';
 
 Amplify.configure(awsmobile);
 
+/*
+* If a function doesn’t use anything from the component scope,
+* you can hoist it outside the component and then freely use it inside your effects
+* */
+
+async function fetchPictures(count) {
+  const response = await API.post('shibaapi', '/pictures', { body: { number: count } });
+  return response.data;
+}
+
 const App = () => {
   const [pictures, setPictures] = useState([]);
   const [color, setColor] = useState('#DDD');
 
   useEffect(() => {
-    fetchPictures(10);
+    fetchPictures(10).then(setPictures);
   }, []);
 
 
@@ -18,11 +28,6 @@ const App = () => {
   useEffect(() => {
     document.body.style.backgroundColor = color;
   });
-
-  async function fetchPictures(count) {
-    const response = await API.post('shibaapi', '/pictures', { body: { number: count } });
-    setPictures(response.data);
-  }
 
   const renderPics = (pictures) => (pictures && pictures.map((el, idx) => (
     <div key={idx}><img src={el} alt='Shibe' title='Shibe' /></div>)));
