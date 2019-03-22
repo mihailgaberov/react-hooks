@@ -25,7 +25,6 @@ function usePictures(count) {
   return pictures;
 }
 
-
 const App = () => {
   const [color, setColor] = useState('#DDD');
   const pictures = usePictures(10);
